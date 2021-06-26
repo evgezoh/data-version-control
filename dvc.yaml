@@ -1,0 +1,27 @@
+stages:
+  prepare:
+    cmd: C:/Users/Eugene/Desktop/git/data-version-control/vemve/Scripts/python.exe
+      src/prepare.py
+    deps:
+    - data/raw
+    - src/prepare.py
+    outs:
+    - data/prepared/test.csv
+    - data/prepared/train.csv
+  train:
+    cmd: C:/Users/Eugene/Desktop/git/data-version-control/vemve/Scripts/python.exe
+      src/train.py
+    deps:
+    - data/prepared/train.csv
+    - src/train.py
+    outs:
+    - model/model.joblib
+  evaluate:
+    cmd: C:/Users/Eugene/Desktop/git/data-version-control/vemve/Scripts/python.exe
+      src/evaluate.py
+    deps:
+    - model/model.joblib
+    - src/evaluate.py
+    metrics:
+    - metrics/accuracy.json:
+        cache: false

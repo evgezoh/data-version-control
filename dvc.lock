@@ -1,0 +1,48 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: C:/Users/Eugene/Desktop/git/data-version-control/vemve/Scripts/python.exe
+      src/prepare.py
+    deps:
+    - path: data/raw
+      md5: 0392b870cdceba8db7b0456344deeee6.dir
+      size: 53568
+      nfiles: 9
+    - path: src/prepare.py
+      md5: dc8dea4883f549a3863495bca746a74d
+      size: 1029
+    outs:
+    - path: data/prepared/test.csv
+      md5: 61f9218bb08c21206521293f813e2bfc
+      size: 88
+    - path: data/prepared/train.csv
+      md5: 61f9218bb08c21206521293f813e2bfc
+      size: 88
+  train:
+    cmd: C:/Users/Eugene/Desktop/git/data-version-control/vemve/Scripts/python.exe
+      src/train.py
+    deps:
+    - path: data/prepared/train.csv
+      md5: 61f9218bb08c21206521293f813e2bfc
+      size: 88
+    - path: src/train.py
+      md5: 85627b7b6d66de0a625d8db9493e142d
+      size: 1396
+    outs:
+    - path: model/model.joblib
+      md5: dbf820c3f92d96020f6b5e1f76813182
+      size: 8
+  evaluate:
+    cmd: C:/Users/Eugene/Desktop/git/data-version-control/vemve/Scripts/python.exe
+      src/evaluate.py
+    deps:
+    - path: model/model.joblib
+      md5: dbf820c3f92d96020f6b5e1f76813182
+      size: 8
+    - path: src/evaluate.py
+      md5: 1680b5f7db783a736e27ae1bfa6090f2
+      size: 569
+    outs:
+    - path: metrics/accuracy.json
+      md5: e65c924ebcd65a894583e34c1b45c958
+      size: 15
