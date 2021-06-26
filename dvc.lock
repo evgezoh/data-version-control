@@ -40,9 +40,9 @@ stages:
       md5: dbf820c3f92d96020f6b5e1f76813182
       size: 8
     - path: src/evaluate.py
-      md5: 748b5123662fbbcf1ef1cf444c70ef8c
+      md5: 1680b5f7db783a736e27ae1bfa6090f2
       size: 569
     outs:
     - path: metrics/accuracy.json
-      md5: 839f3fe9ed7ab4169657e86808d37fb4
+      md5: e65c924ebcd65a894583e34c1b45c958
       size: 15
