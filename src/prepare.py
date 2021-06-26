@@ -1,20 +1,15 @@
 from pathlib import Path
-
+from os import listdir
 import pandas as pd
-
-FOLDERS_TO_LABELS = {"n03445777": "golf ball", "n03888257": "parachute"}
 
 
 def get_files_and_labels(source_path):
     images = []
     labels = []
-    for image_path in source_path.rglob("*/*.JPEG"):
-        filename = image_path.absolute()
-        folder = image_path.parent.name
-        if folder in FOLDERS_TO_LABELS:
-            images.append(filename)
-            label = FOLDERS_TO_LABELS[folder]
-            labels.append(label)
+    for i in range(10):
+        filename = i
+        images.append(filename)
+        labels.append(i+1)
     return images, labels
 
 
