@@ -26,19 +26,19 @@ stages:
       md5: 61f9218bb08c21206521293f813e2bfc
       size: 88
     - path: src/train.py
-      md5: 85627b7b6d66de0a625d8db9493e142d
-      size: 1396
+      md5: 16d0ffcab9f9de53e65916cccce60941
+      size: 1402
     outs:
     - path: model/model.joblib
-      md5: dbf820c3f92d96020f6b5e1f76813182
-      size: 8
+      md5: 61c6e9d8bcdb332a72f4ab89f2df0d3f
+      size: 10
   evaluate:
     cmd: C:/Users/Eugene/Desktop/git/data-version-control/vemve/Scripts/python.exe
       src/evaluate.py
     deps:
     - path: model/model.joblib
-      md5: dbf820c3f92d96020f6b5e1f76813182
-      size: 8
+      md5: 61c6e9d8bcdb332a72f4ab89f2df0d3f
+      size: 10
     - path: src/evaluate.py
       md5: 7d1eb43a1092679ad5b38cb8b1679b6e
       size: 569

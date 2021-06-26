@@ -38,7 +38,7 @@ def main(repo_path):
     # train_csv_path = repo_path / "data/prepared/train.csv"
     # train_data, labels = load_data(train_csv_path)
     # sgd = SGDClassifier(max_iter=10)
-    trained_model = [None]
+    trained_model = [None, None]
     dump(trained_model, repo_path / "model/model.joblib")
 
 
